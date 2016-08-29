@@ -1,6 +1,6 @@
 # ProductQuest
 
-[Heroku link][heroku] 
+[Heroku link][heroku]
 
 [heroku]: http://www.herokuapp.com
 
@@ -37,64 +37,64 @@ adequate seed data and sufficient CSS styling:
 
 ### Phase 1: Backend setup and Front End User Auth (2 days)
 
-Objective: Functioning rails project with front-end auth
+**Objective:** Functioning rails project with front-end auth
 
--[ ] New Rails Project
--[ ] 'User' model/migration
--[ ] Backend Auth
--[ ] 'StaticPages' controller and root view
--[ ] Webpack, React/Redux modules
--[ ] Redux cycle for frontend Auth
--[ ] User sign-in/up components
--[ ] style sign-in/up components
--[ ] seed users
+- [ ] New Rails Project
+- [ ] 'User' model/migration
+- [ ] Backend Auth
+- [ ] 'StaticPages' controller and root view
+- [ ] Webpack, React/Redux modules
+- [ ] Redux cycle for frontend Auth
+- [ ] User sign-in/up components
+- [ ] style sign-in/up components
+- [ ] seed users
 
 ### Phase 2: Products Model, API, and components (2 days)
 
-Objective: Products can be added and viewed
+**Objective:** Products can be added and viewed
 
--[ ] Product model
--[ ] Seed database with small amount of test data
--[ ] Create, Read API for products (ProductsController)
--[ ] JBuilder views for products
--[ ] Product Components: NewProductForm, ProductDetail, ProductIndex
--[ ] Style product Components
--[ ] Seed products
+- [ ] Product model
+- [ ] Seed database with small amount of test data
+- [ ] Create, Read API for products (ProductsController)
+- [ ] JBuilder views for products
+- [ ] Product Components: NewProductForm, ProductDetail, ProductIndex
+- [ ] Style product Components
+- [ ] Seed products
 
 ### Phase 3: Users and Profile Pages (2 days)
 
-Objective: Users have profile pages that can be viewed
+**Objective:** Users have profile pages that can be viewed
 
--[ ] User model
--[ ] Seed database with small amount of test data
--[ ] Create, Read, Update API for users (UsersController)
--[ ] JBuilder views for profile Pages
--[ ] User components: UserDetail, Tabs
--[ ] Style User components
--[ ] Seed users
+- [ ] User model
+- [ ] Seed database with small amount of test data
+- [ ] Create, Read, Update API for users (UsersController)
+- [ ] JBuilder views for profile Pages
+- [ ] User components: UserDetail, Tabs
+- [ ] Style User components
+- [ ] Seed users
 
 ### Phase 4: Discussion (1.5 days)
 
-Objective: Comments can be added to Product Pages
+**Objective:** Comments can be added to Product Pages
 
--[ ] Discussion model
--[ ] Seed database with small amount of test data
--[ ] Create, Read API for Discussion (DiscussionsController)
--[ ] Extend Product page JBuilder view to include Discussion
--[ ] Discussion Components: DiscussionContainer, DiscussionItems, NewCommentContainer, NewCommentForm
--[ ] Style Discussion Components
--[ ] Seed discussion data
+- [ ] Discussion model
+- [ ] Seed database with small amount of test data
+- [ ] Create, Read API for Discussion (DiscussionsController)
+- [ ] Extend Product page JBuilder view to include Discussion
+- [ ] Discussion Components: DiscussionContainer, DiscussionItems, NewCommentContainer, NewCommentForm
+- [ ] Style Discussion Components
+- [ ] Seed discussion data
 
 ### Phase 5: Search (1.5 days)
 
-Objective: Both products and users are searchable.
+**Objective:** Both products and users are searchable.
 
--[ ] Add Autosearch to JBuilder Header view
--[ ] Search Components: Autosearch, AutoSearchResults
+- [ ] Add Autosearch to JBuilder Header view
+- [ ] Search Components: Autosearch, AutoSearchResults
 
 
 ### Bonus Features:
 
--[ ] Infinite Scroll for Products Index
--[ ] Collections
--[ ] Upvotes
+- [ ] Infinite Scroll for Products Index
+- [ ] Collections
+- [ ] Upvotes
