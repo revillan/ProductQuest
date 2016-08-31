@@ -7,8 +7,11 @@ export default ({ getState, dispatch }) => next => action => {
   const successCallback = user => dispatch(receiveCurrentUser(user));
   const errorCallback = xhr => {
     const errors = xhr.responseJSON;
+    console.log(errors);
+    // console.log(xhr);
     dispatch(receiveErrors(errors));
   };
+  // const errorCallback = errors => dispatch(receiveErrors(errors));
   switch(action.type){
     case SessionConstants.LOGIN:
       login(action.user, successCallback, errorCallback);
@@ -18,7 +21,6 @@ export default ({ getState, dispatch }) => next => action => {
       break;
     case SessionConstants.SIGNUP:
       signup(action.user, successCallback, errorCallback);
-      debugger
       return next(action);
     default:
       return next(action);
