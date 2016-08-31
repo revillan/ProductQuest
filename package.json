@@ -4,7 +4,11 @@
   "description": "== README",
   "main": "product_quest.jsx",
   "scripts": {
-    "test": "asdfjkl;"
+    "postinstall": "./node_modules/.bin/webpack"
+  },
+  "engines": {
+    "node": "6.2.1",
+    "npm": "3.9.3"
   },
   "author": "Reilly Villanueva",
   "license": "ISC",

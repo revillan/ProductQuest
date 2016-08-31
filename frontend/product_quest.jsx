@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.currentUser) {
     const initialState = {session: {currentUser: window.currentUser}};
     store = configureStore(initialState);
+    // debugger
   } else {
     store = configureStore();
   }
