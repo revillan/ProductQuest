@@ -9,10 +9,15 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this._clearErrorsWhenSwitchForms = this._clearErrorsWhenSwitchForms.bind(this);
   }
 
   componentDidUpdate(){
     this.redirectIfLoggedIn();
+  }
+
+  _clearErrorsWhenSwitchForms(nextState, replace){
+    this.props.receiveErrors([]);
   }
 
   redirectIfLoggedIn(){
@@ -33,9 +38,11 @@ class SessionForm extends React.Component {
 
   navLink(){
     if (this.props.formType === "login") {
-      return <Link to="/signup">sign up instead</Link>;
+      return <Link to="/signup" onClick={this._clearErrorsWhenSwitchForms}>
+        sign up instead</Link>;
     } else {
-      return <Link to="/login">log in instead</Link>;
+      return <Link to="/login" onClick={this._clearErrorsWhenSwitchForms}>
+        log in instead</Link>;
     }
   }
 
@@ -55,7 +62,7 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to ProductQuest!
+          ProductQuest
           <br/>
           Please { this.props.formType } or { this.navLink() }
           { this.renderErrors() }
