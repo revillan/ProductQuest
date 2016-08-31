@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, hashHistory } from 'react-router';
+import { Link, hashHistory, withRouter } from 'react-router';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -11,15 +11,15 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // componentDidUpdate(){
-  //   this.redirectIfLoggedIn();
-  // }
-  //
-  // redirectIfLoggedIn(){
-  //   if (this.props.loggedIn) {
-  //     hashHistory.push("/");
-  //   }
-  // }
+  componentDidUpdate(){
+    this.redirectIfLoggedIn();
+  }
+
+  redirectIfLoggedIn(){
+    if (this.props.loggedIn) {
+      this.props.router.replace('/');
+    }
+  }
 
   update(field){
 		return e => { this.setState({[field]: e.currentTarget.value }); };
@@ -84,4 +84,4 @@ class SessionForm extends React.Component {
     );
   }
 }
-export default SessionForm;
+export default withRouter(SessionForm);

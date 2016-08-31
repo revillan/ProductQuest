@@ -18,6 +18,7 @@ export default ({ getState, dispatch }) => next => action => {
       break;
     case SessionConstants.SIGNUP:
       signup(action.user, successCallback, errorCallback);
+      debugger
       return next(action);
     default:
       return next(action);

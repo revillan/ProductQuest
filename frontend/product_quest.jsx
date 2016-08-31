@@ -5,13 +5,12 @@ import { Root } from './components/root';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
-  let store = window.store = configureStore();
+  let store;
   if (window.currentUser) {
     const initialState = {session: {currentUser: window.currentUser}};
-    store = configureStore(initialState);
-    // debugger
+    store = window.store = configureStore(initialState);
   } else {
-    store = configureStore();
+    store = window.store = configureStore();
   }
   ReactDOM.render(<Root store={store}/>, root);
 });
