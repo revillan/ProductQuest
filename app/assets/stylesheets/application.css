@@ -151,15 +151,15 @@
  .submit {
    border-radius: 2px;
    /*border: solid black 1px;*/
-   padding: 5px;
+   padding: 7px;
    margin: 5px;
    background-color: #C6340E;
    color: #fff;
  }
 
- .submit:hover {
+ /*.submit:hover {
    color: black;
- }
+ }*/
 
  .log-sign:hover {
   color: #C6340E;
@@ -172,4 +172,14 @@
  .error-list {
    color: #C6340E;
    font-size: 14px;
+ }
+
+ button, input[type="submit"] {
+  cursor: pointer;
+  transition: filter .3s, -webkit-filter .3s;
+ }
+
+ button:hover, input[type="submit"]:hover {
+  filter: brightness(85%);
+  -webkit-filter: brightness(85%);
  }
