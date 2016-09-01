@@ -36,6 +36,15 @@ class SessionForm extends React.Component {
     this.props.processForm({ user });
   }
 
+  demoAccount(e){
+    this.setState({
+      username: "jsmith",
+      password: "lsPrfv"
+    });
+    const user = { username: "jsmith", password: "lsPrfv" };
+    this.props.demo({ user });
+  }
+
   navLink(){
     if (this.props.formType === "login") {
       return <Link to="/signup" className="log-sign" onClick={this._clearErrorsWhenSwitchForms}>
@@ -65,7 +74,7 @@ class SessionForm extends React.Component {
           <Link to="/"><h1 className="logo">Product Quest</h1></Link>
         </div>
         <div className="parent">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
+        <form className="login-form-box">
           <br/>
           <div className='login-directions'>
             { this.props.formType === 'login' ? "Login" : "Sign up" } or { this.navLink() } instead
@@ -91,7 +100,10 @@ class SessionForm extends React.Component {
             </label>
 
             <br />
-            <input type="submit" className="submit" value="Submit" />
+            <span>
+              <input type="button" className="submit" value="Submit" onClick={this.handleSubmit}  />
+              <input type="button" className="submit" value="Demo Account" onClick={(e) => this.demoAccount(e)}/>
+            </span>
           </div>
         </form>
         </div>
