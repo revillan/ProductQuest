@@ -157,9 +157,10 @@
    color: #fff;
  }
 
- /*.submit:hover {
-   color: black;
- }*/
+ .submit:hover {
+   filter: brightness(85%);
+   -webkit-filter: brightness(85%);
+ }
 
  .log-sign:hover {
   color: #C6340E;
