@@ -38,17 +38,17 @@ class SessionForm extends React.Component {
 
   navLink(){
     if (this.props.formType === "login") {
-      return <Link to="/signup" onClick={this._clearErrorsWhenSwitchForms}>
-        sign up instead</Link>;
+      return <Link to="/signup" className="log-sign" onClick={this._clearErrorsWhenSwitchForms}>
+        Sign up </Link>;
     } else {
-      return <Link to="/login" onClick={this._clearErrorsWhenSwitchForms}>
-        log in instead</Link>;
+      return <Link to="/login" className="log-sign" onClick={this._clearErrorsWhenSwitchForms}>
+        Login </Link>;
     }
   }
 
   renderErrors(){
     return(
-      <ul>
+      <ul className="error-list">
         {this.props.errors.map( (error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -60,12 +60,19 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
-        <Link to="/"><h1>Product Quest</h1></Link>
+      <div>
+        <div className="header-group">
+          <Link to="/"><h1 className="logo">Product Quest</h1></Link>
+        </div>
+        <div className="parent">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
-          { this.props.formType } or { this.navLink() }
+          <div className='login-directions'>
+            { this.props.formType === 'login' ? "Login" : "Sign up" } or { this.navLink() } instead
+          </div>
+          <div className='login-directions'>
           { this.renderErrors() }
+          </div>
           <div className="login-form">
             <br />
             <label> Username:
@@ -84,9 +91,10 @@ class SessionForm extends React.Component {
             </label>
 
             <br />
-            <input type="submit" value="Submit" />
+            <input type="submit" className="submit" value="Submit" />
           </div>
         </form>
+        </div>
       </div>
     );
   }

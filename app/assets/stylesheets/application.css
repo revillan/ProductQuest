@@ -70,46 +70,106 @@
  }
 
  .header-group {
-  background-color: #9DC2CB;
+  background-color: #C6340E;
   display: flex;
   justify-content: space-between;
   font-family: "Roboto", sans-serif;
   margin: 0 auto;
   width: 100%;
-  padding: 5px;
+  padding: 10px;
  }
+
  .header-group h1 {
-   font-size: 35px;
+   font-family: 'Alfa Slab One', cursive;
+   font-size: 30px;
    font-style: bold;
+   /*color: #9DC2CB;*/
+   color: #fff;
  }
 
 .login-signup {
   align-self: center;
-  padding: 10px;
+  padding-right: 15px;
+  color: #fff;
 }
 
 .login-signup a:hover {
-  font-style: bold;
-  font-size: 17px;
+  /*font-style: bold;*/
+  color: black;
+  /*font-size: 17px;*/
 }
 
 .login-form-container {
-  background-color: #ddd;
-  /*display: flex;*/
+  background-color: #C6340E;
+  /*background-color: #ddd;*/
+  display: fi;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-
-.login-form-container h1 {
-  font-size: 35px;
-  font-style: bold;
-  padding: 10px;
-  background-color: #9DC2CB;
+.login-form {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 30px;
+  font-family: 'Alfa Slab One', cursive;
+  display: block;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-form-box {
-  /*justify-content: space-between;*/
-  width: 40%;
   background-color: #eee;
   border: black solid 2px;
+  border-radius: 2px;
+  padding: 20px;
+  width: 40%;
+  /*display: flex;*/
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, 50%);
+  justify-content: center;
+  align-items: center;
 }
+
+ .login-input {
+   border-bottom: solid black 2px;
+   padding: 5px;
+
+ }
+
+ .submit {
+   border-radius: 2px;
+   /*border: solid black 1px;*/
+   padding: 5px;
+   margin: 5px;
+   background-color: #C6340E;
+   color: #fff;
+ }
+
+ .submit:hover {
+   color: black;
+ }
+
+ .log-sign:hover {
+  color: #C6340E;
+ }
+
+.login-direction {
+  paddng: 5px;
+}
+
+ .error-list {
+   color: #C6340E;
+   font-size: 14px;
+ }
