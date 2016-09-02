@@ -4,6 +4,7 @@ class Api::ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.hunter_id = current_user.id
     if @product.save
       render "api/products/show"
     else
@@ -28,7 +29,6 @@ class Api::ProductsController < ApplicationController
     params.require(:products).permit(
       :name,
       :description,
-      :hunter_id,
       :image_url,
       :product_url
   )
