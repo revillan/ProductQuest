@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import { Link, withRouter } from 'react-router';
 
 import ProductDetail from './product_detail';
 
@@ -75,12 +76,15 @@ class ProductIndex extends React.Component {
              (
               <div key={productId} className="product-item"
                   onClick={this.openModal.bind(this, productId)}>
-                  <img src="assets/slack-logo.png"></img>
+                  <img src="assets/slack-logo"></img>
                   <group className="product-item-words">
                     <h4 className="name-description">{this.props.products[productId].name}</h4>
                     <h6 className="name-description">{this.props.products[productId].description}</h6>
                   </group>
 
+                  <button className="hover-submit">
+                      <Link to={`/users/${this.props.products[productId].hunter_id}`}>Hunter</Link>
+                  </button>
                   <a className="hover-submit" href={this.props.products[productId].product_url}
                     target="_blank">Get Product</a>
               </div>
@@ -102,4 +106,4 @@ class ProductIndex extends React.Component {
 
 }
 
-  export default ProductIndex;
+  export default withRouter(ProductIndex);

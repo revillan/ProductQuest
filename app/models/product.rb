@@ -3,7 +3,5 @@ class Product < ActiveRecord::Base
 
   belongs_to :user,
     primary_key: :id,
-    foreign_key: :hunter_id,
-    class: "User"
-
+    foreign_key: :hunter_id
 end

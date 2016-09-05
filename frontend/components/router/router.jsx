@@ -4,6 +4,7 @@ import App from '../app';
 import SessionFormContainer from '../session_form/session_form_container';
 import  HeaderContainer from '../header/header_container';
 import ProductContainer from '../product/product_index_container';
+import ProfileContainer from '../profile/profile_container';
 
 
 class AppRouter extends React.Component{
@@ -49,6 +50,7 @@ class AppRouter extends React.Component{
           <IndexRoute component={ ProductContainer }/>
           <Route path="login" component={ SessionFormContainer } onEnter={ this._redirectIfLoggedIn }/>
           <Route path="signup" component={ SessionFormContainer } onEnter={ this._redirectIfLoggedIn }/>
+          <Route path="users/:id" component={ProfileContainer} />
         </Route>
       </Router>
     );

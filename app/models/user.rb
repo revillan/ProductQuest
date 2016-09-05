@@ -8,9 +8,8 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   has_many :products,
-  primary_key: :id,
-  foreign_key: :hunter_id,
-  class: "Product"
+    primary_key: :id,
+    foreign_key: :hunter_id
 
   def password=(password)
     @password = password
