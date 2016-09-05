@@ -1,0 +1,386 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+
+@import 'default';
+
+.body {
+  background-color: #eee;
+  height: 100%
+}
+
+ #root {
+  font-size: 16px;
+  font-weight: 400;
+  background: #eee;
+  font-family: "Roboto", sans-serif;
+  height: 100%
+ }
+
+ .header-group {
+  background-color: #C6340E;
+  font-family: "Roboto", sans-serif;
+  margin: 0 auto;
+  width: 100%;
+  // padding: 5px;
+  border-bottom: 1px solid #aaa
+ }
+ h1 {
+   margin: 10px;
+ }
+
+ .header-group h1 {
+   font-family: 'Alfa Slab One';
+   font-size: 30px;
+   font-style: bold;
+   /*color: #9DC2CB;*/
+   color: #fff;
+ }
+
+.header-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+.login-signup, .login-signup2 {
+  align-self: center;
+  padding-right: 15px;
+  color: #fff;
+  font-size: 18px
+}
+
+.login-signup a {
+    color: #fff;
+    display: block;
+    float: right;
+    margin-top: 11px;
+}
+nav.login-signup2 a{
+  color: #fff;
+}
+
+.login-signup a:hover, .login-signup2 a:hover {
+  /*font-style: bold;*/
+  color: #5E5E5E;
+  /*font-size: 17px;*/
+}
+
+.login-form-container {
+  background-color: #C6340E;
+  /*background-color: #ddd;*/
+  display: fi;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 30px;
+  font-family: 'Alfa Slab One';
+  display: block;
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width:100%;
+  height:100%;
+}
+
+.login-form-box {
+  background-color: #eee;
+  border: black solid 2px;
+  border-radius: 2px;
+  padding: 20px;
+  width: 40%;
+  /*display: flex;*/
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(0%, 50%);
+  justify-content: center;
+  align-items: center;
+}
+
+ .login-input {
+   border-bottom: solid black 2px;
+   padding: 5px;
+
+ }
+
+ .submit {
+     border-radius: 2px;
+     box-sizing: border-box;
+     border: solid black 1px;
+     padding: 8px;
+     margin: 5px;
+     background-color: #C6340E;
+     color: #fff;
+     margin-left: 15px;
+ }
+
+ .submit:hover {
+   filter: brightness(85%);
+   -webkit-filter: brightness(85%);
+ }
+
+ .hover-submit {
+   border-radius: 2px;
+   padding: 7px;
+   margin: 5px;
+   background-color: #C6340E;
+   color: #fff;
+   float: right;
+   margin: auto;
+    // color: transparent;
+    margin-right: 50px;
+    // background-color: transparent;
+ }
+
+.hover-submit:hover {
+  background-color: #C6340E;
+  // color: #9DC2CB;
+   border: solid #5E5E5E 1px;
+
+  }
+
+ a.log-sign:hover {
+  color: #C6340E;
+ }
+
+.login-direction {
+  paddng: 5px;
+}
+
+ .error-list {
+   color: #C6340E;
+   font-size: 14px;
+ }
+
+ input.login-input {
+    border: none;
+    background-color: #eee;
+    border-bottom: 2px solid black;
+    margin-left: 8px;
+}
+
+ button, input[type="submit"] {
+  cursor: pointer;
+  transition: filter .3s, -webkit-filter .3s;
+ }
+
+ button:hover, input[type="submit"]:hover {
+  filter: brightness(85%);
+  -webkit-filter: brightness(85%);
+ }
+
+.product-item img {
+  width: 100px;
+  height: 100px;
+  margin: auto 0;
+}
+
+.product-detail img {
+  height: 200px;
+  width: 200px;
+}
+
+.ReactModal__Content {
+
+}
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+button.float-x {
+    border-radius: 25px;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+    background: #bbb;
+    border: #bbb;
+    font-size: 20px;
+    font-family: sans-serif;
+    color: #fff;
+}
+button.float-x:hover {
+  background-color: #C6340E;
+  font-color: #fff;
+  filter: brightness(100%);
+  -webkit-filter: brightness(100%);
+}
+
+ button.add-product:hover {
+   filter: brightness(100%);
+   -webkit-filter: brightness(100%);
+ }
+
+form.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #eee;
+}
+
+form.form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 5%;
+    padding: 10%;
+    border-radius: 5px;
+}
+
+button.add-product, {
+    background-color: #C6340E;
+    border-color: transparent;
+    color: #fff;
+    font-size: 30px;
+}
+
+
+button.add-product:hover, {
+  color: #5E5E5E;
+}
+
+.product-detail {
+    display: block;
+    margin: 0 auto;
+    padding: 0 10%;
+}
+
+.product-detail {
+    display: block;
+    margin: 0 auto;
+    padding: 0 10%;
+    height: 40%;
+    display: block;
+}
+
+img.product-detail-img {
+  float: left;
+  margin: 20px;
+  margin-right: 50px;
+}
+
+section.product-details {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.details {
+  margin: 15px;
+  padding: 10px 0;
+}
+
+h2.details {
+  font-size: 30px;
+}
+
+section.product-buttons {
+  margin-top: 30px;
+}
+
+div.product-item {
+    display: flex;
+    // flex-direction: column;
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: 0 0px;
+    height: 130px;
+    padding-left: 60px;
+}
+
+div.product-item:hover{
+  background-color: #9DC2CB;
+}
+
+.index-box {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+}
+
+group.product-item-words {
+  margin: auto 0;
+  margin-left: 40px;
+  color: #5E5E5E;
+}
+
+h4.name-description {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+h6.name-description{
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.loading {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: #fff;
+
+}
+.loading-text {
+  margin: 0 auto;
+  flex-grow: 1;
+  color: #ccc;
+  font-size: 25px;
+}
+
+
+input[type="text"] {
+ border: none;
+ border-bottom: 2px solid black;
+ margin-left: 8px;
+ background-color: transparent;
+}
+
+input.btn {
+  margin: 15px;
+  box-sizing: border-box;
+  color: #fff;
+  background-color: #C6340E;
+  border-radius: 4px;
+  border: none;
+  padding: 7px;
+}
+
+input.btn:hover {
+  border: 1px solid #5e5e5e;
+
+}

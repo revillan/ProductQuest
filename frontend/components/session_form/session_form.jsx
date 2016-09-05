@@ -67,12 +67,16 @@ class SessionForm extends React.Component {
     );
   }
 
+
+  // <div className="header-group">
+  //   <Link to="/"><h1 className="logo">Product Quest</h1></Link>
+  // </div>
+
+
   render() {
     return (
       <div>
-        <div className="header-group">
-          <Link to="/"><h1 className="logo">Product Quest</h1></Link>
-        </div>
+
         <div className="parent">
         <form className="login-form-box">
           <br/>

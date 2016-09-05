@@ -18,6 +18,12 @@ User.create!({username:"cbarrett", password:"ugyDku"})
 User.create!({username:"hachoi", password:"Y1TR3L"})
 
 Product.create!({name: "Slack", description: "a messaging app" , hunter_id: 4,
-  image_url: "assets/images/slack-logo", product_url: "https://slack.com/"})
+  image_url: "assets/slack-logo", product_url: "https://slack.com/"})
 Product.create!({name: "Evernote", description: "a notetaking app" , hunter_id: 6,
-  image_url: "assets/images/slack-logo", product_url: "https://evernote.com/"})
+  image_url: "assets/slack-logo", product_url: "https://evernote.com/"})
+Product.create!({name: "Evernote", description: "a notetaking app" , hunter_id: 2,
+  image_url: "assets/slack-logo", product_url: "https://evernote.com/"})
+Product.create!({name: "Evernote", description: "a notetaking app" , hunter_id: 5,
+  image_url: "assets/slack-logo", product_url: "https://evernote.com/"})
+Product.create!({name: "Evernote", description: "a notetaking app" , hunter_id: 6,
+  image_url: "assets/slack-logo", product_url: "https://evernote.com/"})

@@ -2,6 +2,9 @@ import React from 'react';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from '../app';
 import SessionFormContainer from '../session_form/session_form_container';
+import  HeaderContainer from '../header/header_container';
+import ProductContainer from '../product/product_index_container';
+
 
 class AppRouter extends React.Component{
   constructor(props) {
@@ -31,20 +34,22 @@ class AppRouter extends React.Component{
   // }
 
   render() {
-    let a = <Route path="/" component={ App } />;
-
-    let b = <Route path="/login" component={ SessionFormContainer }
-      onEnter={ this._redirectIfLoggedIn }/>;
-
-    let c = <Route path="/signup" component={ SessionFormContainer }
-      onEnter={ this._redirectIfLoggedIn } />
+    // let a = <Route path="/" component={ App } >;
+    //
+    // let b = <Route path="/login" component={ SessionFormContainer }
+    //   onEnter={ this._redirectIfLoggedIn }/>;
+    //
+    // let c = <Route path="/signup" component={ SessionFormContainer }
+    //   onEnter={ this._redirectIfLoggedIn } />;
 
 
     return (
       <Router history={ hashHistory }>
-        {a}
-        {b}
-        {c}
+        <Route path="/" component={ App }>
+          <IndexRoute component={ ProductContainer }/>
+          <Route path="login" component={ SessionFormContainer } onEnter={ this._redirectIfLoggedIn }/>
+          <Route path="signup" component={ SessionFormContainer } onEnter={ this._redirectIfLoggedIn }/>
+        </Route>
       </Router>
     );
   }

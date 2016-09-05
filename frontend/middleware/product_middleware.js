@@ -1,6 +1,7 @@
 import { ProductConstants,
         receiveProducts,
         receiveProduct,
+        requestProducts,
       receiveProductErrors } from '../actions/product_actions';
 import { fetchProduct, fetchProducts, createProduct } from '../util/product_api_util';
 
@@ -20,7 +21,7 @@ export default ({ getState, dispatch }) => next => action => {
         const errors = xhr.responseJSON;
         dispatch(receiveProductErrors(errors));
       };
-      const successCreate = product => dispatch(receiveProduct((product)));
+      const successCreate = () => dispatch(requestProducts());
       createProduct(action.product, successCreate , errorCallback);
       return next(action);
     default:
