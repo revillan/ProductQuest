@@ -7,7 +7,9 @@ class ProductDetail extends React.Component {
     let product = this.props.products[this.props.id];
     return (
       <div className="product-detail">
-        <img className="product-detail-img" src={product.image_url} alt={product.name} />
+        <img className="product-detail-img"
+          src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/c_thumb,w_200,h_200/${product.image_url}.jpg`}
+          alt={product.name} />
         <section className="product-details">
           <h2 className="details">{product.name}</h2>
           <h4 className="details">{product.description}</h4>

@@ -66,7 +66,8 @@ class Profile extends React.Component {
       <div>
         <main className="user-box">
           <main className="profile-content">
-            <img src={user.image_url} alt={user.username}></img>
+            <img src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/c_thumb,g_face,w_150,h_150/${user.image_url}.jpg`}
+               alt={user.username}></img>
             <article className="profile-text">
               <h2>@{user.username}</h2>
               <h4>{user.title}</h4>
@@ -81,7 +82,7 @@ class Profile extends React.Component {
 
             <div key={productId} className="product-item"
                 onClick={this.openModal.bind(this, productId)}>
-                <img src={user.products[productId].image_url}></img>
+                <img src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/c_thumb,w_100,h_100/${user.products[productId].image_url}.jpg`}></img>
                 <group className="product-item-words">
                   <h4 className="name-description">{user.products[productId].name}</h4>
                   <h6 className="name-description">{user.products[productId].description}</h6>

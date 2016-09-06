@@ -24,6 +24,19 @@ class AddProductForm extends React.Component {
     // window.setTimeout(this.props.closeModal, 100);
   }
 
+  upload(e) {
+    e.preventDefault();
+    let that = this;
+    cloudinary.openUploadWidget(
+      {cloud_name: "dbyy6mrbe", upload_preset: "bq0m1hib"},
+      function(error, results) {
+        if (!error) {
+          debugger
+          that.setState({ image_url: results[0].public_id }); // results[0].public_id
+        }
+    });
+  }
+
   renderErrors(){
     return(
       <ul className="error-list">
@@ -44,7 +57,7 @@ class AddProductForm extends React.Component {
           <label className="form-label">Name: <input type="text" onChange={this.update("name")}/></label>
           <label className="form-label">Description: <input type="text" onChange={this.update("description")} /></label>
           <label className="form-label">Product URL: <input type="text" onChange={this.update("product_url")} /></label>
-          <label className="form-label">Image URL: <input type="text" onChange={this.update("image_url")} /></label>
+          <label className="form-label"> <button onClick={this.upload.bind(this)}>Upload Image</button> </label>
 
           <input type="button" className="btn" value="Submit" onClick={this.handleSubmit.bind(this)}  />
         </form>
