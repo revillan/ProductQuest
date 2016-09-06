@@ -14,6 +14,7 @@
 
 @import 'default';
 
+
 .body {
   background-color: #eee;
   height: 100%
@@ -36,7 +37,7 @@
   border-bottom: 1px solid #aaa
  }
  h1 {
-   margin: 10px;
+   margin: 5px 0;
  }
 
  .header-group h1 {
@@ -152,10 +153,6 @@ nav.login-signup2 a{
    margin: 5px;
    background-color: #C6340E;
    color: #fff;
-   float: right;
-   margin: auto;
-    // color: transparent;
-    margin-right: 50px;
     // background-color: transparent;
  }
 
@@ -387,3 +384,5 @@ input.btn:hover {
 label.form-label {
     padding: 5px;
 }
+
+@import 'profile';

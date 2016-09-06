@@ -1,0 +1,39 @@
+.product-item-links {
+  float: right;
+  display: flex;
+  align-items: center;
+  margin: auto;
+   // color: transparent;
+   margin-right: 50px;
+}
+
+img.hover-submit {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  margin-right: 10px;
+}
+
+a.hover-submit{
+  height: 18px;
+}
+
+main.user-box {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 2px;
+    border: 1px solid #fff;
+    margin-top: 25px;
+}
+
+main.profile-content {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin: 50px 0;
+}
+
+article.profile-text {
+    margin-left: 10%;
+}

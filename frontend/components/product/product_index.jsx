@@ -76,17 +76,19 @@ class ProductIndex extends React.Component {
              (
               <div key={productId} className="product-item"
                   onClick={this.openModal.bind(this, productId)}>
-                  <img src="assets/slack-logo"></img>
+                  <img src={this.props.products[productId].image_url}></img>
                   <group className="product-item-words">
                     <h4 className="name-description">{this.props.products[productId].name}</h4>
                     <h6 className="name-description">{this.props.products[productId].description}</h6>
                   </group>
 
-                  <button className="hover-submit">
-                      <Link to={`/users/${this.props.products[productId].hunter_id}`}>Hunter</Link>
-                  </button>
-                  <a className="hover-submit" href={this.props.products[productId].product_url}
-                    target="_blank">Get Product</a>
+                  <group className="product-item-links">
+                      <Link to={`/users/${this.props.products[productId].hunter_id}`}>
+                        <img className="hover-submit" src={this.props.products[productId].hunter_img} alt={this.props.products[productId].hunter}/>
+                      </Link>
+                    <a className="hover-submit" href={this.props.products[productId].product_url}
+                      target="_blank">Get Product</a>
+                  </group>
               </div>
             )
           ))
