@@ -78,16 +78,23 @@ class Profile extends React.Component {
           {
           Object.keys(user.products).map((productId) => (
 
-              <div key={productId} className="product-item" onClick={this.openModal.bind(this, productId)}>
-                  <img src={user.products[productId].image_url}></img>
-                  <group className="product-item-words">
-                    <h4 className="name-description">{user.products[productId].name}</h4>
-                    <h6 className="name-description">{user.products[productId].description}</h6>
-                  </group>
 
-                  <a className="hover-submit profile-btn" href={user.products[productId].product_url}
+            <div key={productId} className="product-item"
+                onClick={this.openModal.bind(this, productId)}>
+                <img src={user.products[productId].image_url}></img>
+                <group className="product-item-words">
+                  <h4 className="name-description">{user.products[productId].name}</h4>
+                  <h6 className="name-description">{user.products[productId].description}</h6>
+                </group>
+
+                <group className="product-item-links">
+                  <a className="hover-submit" href={user.products[productId].product_url}
                     target="_blank">Get Product</a>
-              </div>
+                </group>
+            </div>
+
+
+
             )
           )
         }

@@ -37,3 +37,14 @@ main.profile-content {
 article.profile-text {
     margin-left: 10%;
 }
+
+.product-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.product-item-words {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+}
