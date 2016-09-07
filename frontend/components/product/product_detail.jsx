@@ -1,10 +1,23 @@
 import React from 'react';
+import Discussion from '../discussion/discussion';
 
 class ProductDetail extends React.Component {
 
-
   render() {
     let product = this.props.products[this.props.id];
+    let discuss;
+
+    debugger
+
+    if (product.comments !== undefined) {
+      discuss = <Discussion comments={ product.comments }
+        currentUser={this.props.currentUser}
+        createComment={this.props.createComment}
+        productId={parseInt(this.props.id)}/>;
+    } else {
+      discuss = <div></div>;
+    }
+
     return (
       <div className="product-detail">
         <img className="product-detail-img"
@@ -18,6 +31,9 @@ class ProductDetail extends React.Component {
               <a className="submit" href={product.product_url} target="_blank">Get Product</a>
             </section>
           </section>
+
+          <div>{discuss}</div>
+
       </div>
     );
   }

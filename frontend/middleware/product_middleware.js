@@ -2,8 +2,13 @@ import { ProductConstants,
         receiveProducts,
         receiveProduct,
         requestProducts,
-      receiveProductErrors } from '../actions/product_actions';
-import { fetchProduct, fetchProducts, createProduct } from '../util/product_api_util';
+        receiveProductErrors,
+        receiveComment } from '../actions/product_actions';
+
+import {  fetchProduct,
+          fetchProducts,
+          createProduct,
+          createComment } from '../util/product_api_util';
 
 export default ({ getState, dispatch }) => next => action => {
   switch(action.type){
@@ -12,7 +17,6 @@ export default ({ getState, dispatch }) => next => action => {
       fetchProducts(successProducts);
       return next(action);
     case ProductConstants.REQUEST_PRODUCT:
-      // debugger
       const successProduct = product => dispatch(receiveProduct((product)));
       fetchProduct(action.id, successProduct);
       return next(action);
@@ -23,6 +27,10 @@ export default ({ getState, dispatch }) => next => action => {
       };
       const successCreate = () => dispatch(requestProducts());
       createProduct(action.product, successCreate , errorCallback);
+      return next(action);
+    case ProductConstants.CREATE_COMMENT:
+      const successComment = comment => dispatch(receiveComment(comment));
+      createComment(action.discussion, successComment);
       return next(action);
     default:
       return next(action);

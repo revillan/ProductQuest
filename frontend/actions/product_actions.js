@@ -4,7 +4,9 @@ export const ProductConstants = {
   REQUEST_PRODUCTS: "REQUEST_PRODUCTS",
   REQUEST_PRODUCT: "REQUEST_PRODUCT",
   CREATE_PRODUCT: "CREATE_PRODUCT",
-  RECEIVE_PRODUCT_ERRORS: "RECEIVE_PRODUCT_ERRORS"
+  RECEIVE_PRODUCT_ERRORS: "RECEIVE_PRODUCT_ERRORS",
+  CREATE_COMMENT: "CREATE_COMMENT",
+  RECEIVE_COMMENT: "RECEIVE_COMMENT"
 };
 
 export const receiveProducts = products => ({
@@ -34,4 +36,15 @@ export const createProduct = product => ({
 export const receiveProductErrors = errors => ({
   type: ProductConstants.RECEIVE_PRODUCT_ERRORS,
   errors
+});
+
+export const createComment = discussion => ({
+  type: ProductConstants.CREATE_COMMENT,
+  discussion
+});
+
+export const receiveComment = (comment, productId) => ({
+  type: ProductConstants.RECEIVE_COMMENT,
+  comment,
+  productId
 });

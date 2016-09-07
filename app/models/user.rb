@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :hunter_id
 
+  has_many :comments,
+    foreign_key: :author_id,
+    class_name: "Discussion"
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)

@@ -8,7 +8,7 @@ class AddProductForm extends React.Component {
       name: "",
       description: "",
       product_url: "",
-      image_url: ""
+      image_url: "vcbkjwsgq5xztftzqbrz"
     };
   }
 
@@ -27,12 +27,11 @@ class AddProductForm extends React.Component {
   upload(e) {
     e.preventDefault();
     let that = this;
-    cloudinary.openUploadWidget(
-      {cloud_name: "dbyy6mrbe", upload_preset: "bq0m1hib"},
+    cloudinary.openUploadWidget( CLOUDINARY_OPTIONS,
       function(error, results) {
         if (!error) {
           debugger
-          that.setState({ image_url: results[0].public_id }); // results[0].public_id
+          that.setState({ image_url: results[0].public_id });
         }
     });
   }

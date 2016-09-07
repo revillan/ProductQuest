@@ -7,7 +7,6 @@ export const fetchProducts = (success) => {
 };
 
 export const fetchProduct = (id, success) => {
-  console.log(id);
   $.ajax({
     method: 'GET',
     url: 'api/products/'+id,
@@ -22,5 +21,14 @@ export const createProduct = (product, success, error) => {
     data: product,
     success,
     error
+  });
+};
+
+export const createComment = (discussion, success) => {
+  $.ajax({
+    method: 'POST',
+    url: 'api/discussions',
+    data: discussion,
+    success
   });
 };

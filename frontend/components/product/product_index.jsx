@@ -1,4 +1,4 @@
-import React from 'react';
+  import React from 'react';
 import Modal from 'react-modal';
 import { Link, withRouter } from 'react-router';
 
@@ -10,8 +10,8 @@ class ProductIndex extends React.Component {
     super();
      this.customStyles = {
       content : {
-        top                   : '30%',
-        left                  : '30%',
+        top                   : '50%',
+        left                  : '15%',
         right                 : 'auto',
         bottom                : 'auto',
         marginRight           : '-50%',
@@ -24,7 +24,7 @@ class ProductIndex extends React.Component {
         left              : 0,
         right             : 0,
         bottom            : 0,
-        backgroundColor   : 'black'
+        backgroundColor   : 'rgb(100,100,100,0.5)'
       },
     };
     this.openModal = this.openModal.bind(this);
@@ -40,6 +40,7 @@ class ProductIndex extends React.Component {
 
   openModal(id) {
     // debugger
+    this.props.requestProduct(id);
     this.setState({modalIsOpen: true, id: id});
   }
 
@@ -101,7 +102,8 @@ class ProductIndex extends React.Component {
         <Modal isOpen={this.state.modalIsOpen}>
           <button className="float-x" onClick={this.closeModal}>X</button>
           <br/>
-          <ProductDetail products={this.props.products} id={this.state.id}/>
+          <ProductDetail products={this.props.products} id={this.state.id}
+             currentUser={this.props.currentUser} createComment={this.props.createComment}/>
         </Modal>
 
       </div>
