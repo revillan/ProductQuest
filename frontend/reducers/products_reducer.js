@@ -11,6 +11,9 @@ const ProductsReducer = function (state = _defaultProducts, action) {
   switch(action.type){
     case ProductConstants.RECEIVE_PRODUCT:
       let product = action.product;
+      if (product["comments"] === undefined) {
+        product["comments"] = {};
+      }
       products = merge({}, state.products,  {[product.id]: product });
       return merge({}, _defaultProducts, { products });
     case ProductConstants.RECEIVE_PRODUCTS:

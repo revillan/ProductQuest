@@ -7,7 +7,7 @@ class ProductDetail extends React.Component {
     let product = this.props.products[this.props.id];
     let discuss;
 
-    debugger
+    // debugger
 
     if (product.comments !== undefined) {
       discuss = <Discussion comments={ product.comments }
