@@ -7,15 +7,13 @@ class ProductDetail extends React.Component {
     let product = this.props.products[this.props.id];
     let discuss;
 
-    // debugger
-
     if (product.comments !== undefined) {
       discuss = <Discussion comments={ product.comments }
         currentUser={this.props.currentUser}
         createComment={this.props.createComment}
         productId={parseInt(this.props.id)}/>;
     } else {
-      discuss = <div></div>;
+      discuss = <div>On a comment quest...</div>;
     }
 
     return (

@@ -20,8 +20,11 @@ class AddProductForm extends React.Component {
     e.preventDefault();
     const products = this.state;
     this.props.createProduct({ products });
-    // debugger
-    // window.setTimeout(this.props.closeModal, 100);
+    
+    if (this.state.name !== "" && this.state.description !== "" &&
+        this.state.product_url !== "") {
+          this.props.closeModal();
+        }
   }
 
   upload(e) {
