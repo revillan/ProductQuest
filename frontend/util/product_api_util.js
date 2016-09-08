@@ -32,3 +32,12 @@ export const createComment = (discussion, success) => {
     success
   });
 };
+
+export const fetchSearch = (query, success) => {
+  $.ajax({
+    method: 'GET',
+    url: 'api/products',
+    data: query,
+    success
+  });
+};

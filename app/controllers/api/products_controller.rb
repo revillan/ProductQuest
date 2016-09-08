@@ -21,7 +21,15 @@ class Api::ProductsController < ApplicationController
 
   def index
     @products = Product.all
-    # render "api/products/index"
+    if params[:query] && !params[:query].empty?
+      @products = @products.where(
+        [
+          'LOWER(name) LIKE :query OR LOWER(description) LIKE :query',
+          { query: "%#{params[:query].downcase}%" }
+        ]
+      )
+    end
+    @products
   end
 
   private

@@ -30,7 +30,7 @@ class ProductDetail extends React.Component {
             </section>
           </section>
 
-          <div>{discuss}</div>
+          <section className="Discussion">{discuss}</section>
 
       </div>
     );

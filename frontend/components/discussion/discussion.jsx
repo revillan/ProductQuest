@@ -40,7 +40,7 @@ class Discussion extends React.Component {
 
     return (
       <div>
-        DISCUSSION
+        <h3 className="discussion-title">DISCUSSION</h3>
         {comments}
         {form}
       </div>

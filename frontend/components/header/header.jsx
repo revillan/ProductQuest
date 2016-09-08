@@ -29,6 +29,7 @@ class Header extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.login = false;
+    this.state = {query: ""}
   }
 
   componentWillMount() {
@@ -54,49 +55,10 @@ class Header extends React.Component {
     this.setState({modalIsOpen: false});
   }
 
-//
-//   render() {
-//     if (this.props.currentUser) {
-//       return (
-//         <hgroup className="header-group">
-//           <Link to="/"><h1>Product Quest</h1></Link>
-//           <nav className="login-signup">
-//             <Link to="/" onClick={this.props.logout}>Log Out</Link>
-//           </nav>
-//         </hgroup>
-//       );
-//     } else {
-//       return (
-//         <hgroup className="header-group">
-//           <Link to="/"><h1>Product Quest</h1></Link>
-//           <nav className="login-signup">
-//             <button id="login" onClick={this.openModal}>Login</button>
-//               &nbsp;or&nbsp;
-//             <button id="signup" onClick={this.openModal}>Sign up!</button>
-//           </nav>
-//
-//           <Modal isOpen={this.state.modalIsOpen}
-//             styles={this.state.customStyles}>
-//
-//             The modal is open
-//
-//             <SessionForm/>
-//
-//             <button onClick={this.closeModal}>CLOSE</button>
-//           </Modal>
-//
-//         </hgroup>
-//       );
-//     }
-//   }
-//
-// }
+  autosearch() {
+    return e => ( this.props.requestSearch({query: e.currentTarget.value }) );
+  }
 
-
-
-
-
-// function Header ({ currentUser, logout }) {
     render() {
       if (this.props.currentUser) {
         return (
@@ -104,6 +66,8 @@ class Header extends React.Component {
             <nav className="header-buttons">
             <Link to="/"><h1>Product Quest</h1></Link>
 
+            <input type="text" placeholder="Discover your next favorite thing..."
+                className="search-bar" onChange={this.autosearch()}/>
 
             <nav className="login-signup">
               <button className="add-product" onClick={this.openModal}>  +  </button>

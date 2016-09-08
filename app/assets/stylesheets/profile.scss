@@ -53,3 +53,16 @@ article.profile-text {
   height: auto;
   width: auto;
 }
+
+section.Discussion {
+    display: block;
+    float: left;
+    margin: 20px;
+    width: 100%;
+}
+
+.discussion-title {
+  display: block;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+}

@@ -1,5 +1,6 @@
 import merge from 'lodash/merge';
 import { ProductConstants } from '../actions/product_actions';
+// import { SearchConstants } from '../actions/search_actions';
 
 const _defaultProducts = Object.freeze({
   products: {},
