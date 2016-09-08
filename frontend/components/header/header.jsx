@@ -60,14 +60,17 @@ class Header extends React.Component {
   }
 
     render() {
+
+      let search =  <input type="text"
+              placeholder="Discover your next favorite thing..."
+              className="search-bar" onChange={this.autosearch()}/>
       if (this.props.currentUser) {
         return (
           <hgroup className="header-group">
             <nav className="header-buttons">
             <Link to="/"><h1>Product Quest</h1></Link>
 
-            <input type="text" placeholder="Discover your next favorite thing..."
-                className="search-bar" onChange={this.autosearch()}/>
+            {search}
 
             <nav className="login-signup">
               <button className="add-product" onClick={this.openModal}>  +  </button>
@@ -91,6 +94,7 @@ class Header extends React.Component {
             <nav className="header-buttons">
             <Link to="/"><h1>Product Quest</h1></Link>
 
+            {search}
 
             <nav className="login-signup2">
               <Link to="/login">Login</Link>
