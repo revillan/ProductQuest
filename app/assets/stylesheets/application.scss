@@ -165,7 +165,7 @@ nav.login-signup2 a{
  }
 
   a.log-sign {
-    text-decoration: underline; 
+    text-decoration: underline;
     color: black;
   }
 
@@ -359,13 +359,14 @@ h6.name-description{
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  background-color: #fff;
+  background-color: #eee;
+  margin-top: 30px;
 
 }
 .loading-text {
   margin: 0 auto;
   flex-grow: 1;
-  color: #ccc;
+  color: #fff;
   font-size: 25px;
 }
 

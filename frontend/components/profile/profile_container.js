@@ -3,11 +3,13 @@ import { requestProfile } from '../../actions/profile_actions';
 import Profile from './profile';
 
 const mapStateToProps = (state) => ({
-  profile: state.profile
+  profile: state.profile,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  requestProfile: () => dispatch(requestProfile( parseInt(ownProps.params.id)))
+  requestProfile: () => dispatch(requestProfile( parseInt(ownProps.params.id))),
+  createComment: (comment) => dispatch(createComment(comment))
 });
 
 export default connect(

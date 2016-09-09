@@ -69,7 +69,8 @@ class Profile extends React.Component {
             <img src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/c_thumb,g_face,w_150,h_150/${user.image_url}.jpg`}
                alt={user.username}></img>
             <article className="profile-text">
-              <h2>@{user.username}</h2>
+              <h2>{user.name}</h2>
+              <h4>@{user.username}, #{user.id}</h4>
               <h4>{user.title}</h4>
             </article>
           </main>
@@ -103,7 +104,8 @@ class Profile extends React.Component {
         <Modal isOpen={this.state.modalIsOpen}>
           <button className="float-x" onClick={this.closeModal}>X</button>
           <br/>
-          <ProductDetail products={user.products} id={this.state.id}/>
+          <ProductDetail products={user.products} id={this.state.id}
+            currentUser={this.props.currentUser} createComment={this.props.createComment}/>
         </Modal>
 
 

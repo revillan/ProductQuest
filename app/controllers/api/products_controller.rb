@@ -29,7 +29,6 @@ class Api::ProductsController < ApplicationController
         ]
       )
     end
-    @products
   end
 
   private

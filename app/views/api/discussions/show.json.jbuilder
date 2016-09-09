@@ -1,4 +1,3 @@
-p @comment
 json.set! @comment.id do
   json.body @comment.body
   json.product_id @comment.product_id

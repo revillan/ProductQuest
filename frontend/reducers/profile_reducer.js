@@ -11,6 +11,13 @@ const ProfileReducer = function (state = _defaultProfiles, action) {
   switch (action.type){
     case ProfileConstants.RECEIVE_PROFILE:
     profile = action.profile;
+    products = profile.products;
+    let prod_id = Object.keys(products);
+    prod_id.forEach((id) => {
+        if (products[id]["comments"] === undefined) {
+          products[id]["comments"] = {};
+        }
+      });
     return merge( {}, _defaultProfiles, { profile });
 
     default:
