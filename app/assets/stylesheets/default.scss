@@ -244,7 +244,7 @@ figure {
 hr {
   box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
-  overflow: visible; /* 2 */
+  // overflow: visible; /* 2 */
 }
 
 /* Forms
@@ -276,10 +276,10 @@ optgroup {
  * 1. Show the overflow in Edge.
  */
 
-button,
-input { /* 1 */
-  overflow: visible;
-}
+// button,
+// input { /* 1 */
+//   overflow: visible;
+// }
 
 /**
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
@@ -368,9 +368,9 @@ li {
  * Remove the default vertical scrollbar in IE.
  */
 
-textarea {
-  overflow: auto;
-}
+// textarea {
+//   overflow: auto;
+// }
 
 /**
  * 1. Add the correct box sizing in IE 10-.
@@ -428,4 +428,8 @@ textarea {
 ::-webkit-file-upload-button {
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
+}
+
+*:focus {
+    outline: none;
 }

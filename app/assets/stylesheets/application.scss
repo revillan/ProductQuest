@@ -15,8 +15,8 @@
 @import 'default';
 
 
-.body {
-  background-color: #eee;
+body {
+  background: #eee;
   height: 100%
 }
 
@@ -25,27 +25,29 @@
   font-weight: 400;
   background: #eee;
   font-family: "Roboto", sans-serif;
-  height: 100%
+  color: #5e5e5e;
  }
 
- .header-group {
-  background-color: #C6340E;
-  font-family: "Roboto", sans-serif;
-  margin: 0 auto;
-  width: 100%;
-  // padding: 5px;
-  border-bottom: 1px solid #aaa
- }
+
+.header-group {
+    background-color: #fff;
+    font-family: "Roboto", sans-serif;
+    margin: 0 auto;
+    width: 100%;
+    border-bottom: 1px solid #aaa;
+}
+
  h1 {
    margin: 5px 0;
  }
 
  .header-group h1 {
-   font-family: 'Alfa Slab One';
-   font-size: 30px;
-   font-style: bold;
-   /*color: #9DC2CB;*/
-   color: #fff;
+     font-family: 'Alfa Slab One';
+     font-size: 30px;
+     font-style: bold;
+     /* color: #9DC2CB; */
+     color: #C6340E;
+     font-weight: 100;
  }
 
 .header-buttons {
@@ -64,19 +66,19 @@
 }
 
 .login-signup a {
-    color: #fff;
+    color: #5e5e5e;
     display: block;
     float: right;
     margin-top: 11px;
 }
+
 nav.login-signup2 a{
-  color: #fff;
+  color: #5e5e5e;
 }
 
 .login-signup a:hover, .login-signup2 a:hover {
-  /*font-style: bold;*/
-  color: #5E5E5E;
-  /*font-size: 17px;*/
+    color: #C6340E;
+    /* font-size: 17px; */
 }
 
 .login-form-container {
@@ -105,14 +107,14 @@ nav.login-signup2 a{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: transparent;
   width:100%;
   height:100%;
 }
 
 .login-form-box {
-  background-color: #eee;
-  border: black solid 2px;
+  background-color: #fff;
+  border: #5e5e5e solid 2px;
   border-radius: 2px;
   padding: 20px;
   width: 40%;
@@ -128,7 +130,7 @@ nav.login-signup2 a{
  .login-input {
    border-bottom: solid black 2px;
    padding: 5px;
-
+  background-color: transparent;
  }
 
  .submit {
@@ -148,19 +150,23 @@ nav.login-signup2 a{
  }
 
  .hover-submit {
-   border-radius: 2px;
-   padding: 7px;
-   margin: 5px;
-   background-color: #C6340E;
-   color: #fff;
-    // background-color: transparent;
+     border-radius: 2px;
+     border: 1px solid transparent;
+     padding: 6px;
+     margin: 5px;
+     background-color: #ddd;
+     color: #5e5e5e;
  }
 
-.hover-submit:hover {
-  background-color: #C6340E;
-  // color: #9DC2CB;
-   border: solid #5E5E5E 1px;
+ .hover-submit:hover {
+     background-color: #ddd;
+     border: solid #5E5E5E 1px;
+     border-radius: 2px;
+ }
 
+  a.log-sign {
+    text-decoration: underline; 
+    color: black;
   }
 
  a.log-sign:hover {
@@ -178,7 +184,7 @@ nav.login-signup2 a{
 
  input.login-input {
     border: none;
-    background-color: #eee;
+    background-color: transparent;
     border-bottom: 2px solid black;
     margin-left: 8px;
 }
@@ -248,16 +254,17 @@ form.form {
     border-radius: 5px;
 }
 
-button.add-product, {
-    background-color: #C6340E;
+button.add-product {
+    background-color: transparent;
     border-color: transparent;
-    color: #fff;
+    color: #5e5e5e;
     font-size: 30px;
+    margin-right: 10px;
 }
 
 
-button.add-product:hover, {
-  color: #5E5E5E;
+button.add-product:hover {
+    color: #C6340E;
 }
 
 .product-detail {
@@ -290,6 +297,7 @@ section.product-details {
 .details {
   margin: 15px;
   padding: 10px 0;
+  color: #5e5e5e;
 }
 
 h2.details {
@@ -316,6 +324,7 @@ div.product-item {
 
 div.product-item:hover{
   background-color: #9DC2CB;
+  cursor: pointer;
 }
 
 .index-box {
@@ -334,12 +343,14 @@ group.product-item-words {
 }
 
 h4.name-description {
-  font-size: 25px;
+  font-size: 24px;
+  font-weight: normal;
   margin-bottom: 10px;
 }
 
 h6.name-description{
   margin-top: 10px;
+  font-weight: normal;
   font-size: 15px;
 }
 

@@ -77,7 +77,7 @@ class ProductIndex extends React.Component {
              (
               <div key={productId} className="product-item"
                   onClick={this.openModal.bind(this, productId)}>
-                  <img src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/c_thumb,w_100,h_100/${this.props.products[productId].image_url}.jpg`}></img>
+                  <img src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/c_thumb,w_100,h_100/${this.props.products[productId].image_url}`}></img>
                   <group className="product-item-words">
                     <h4 className="name-description">{this.props.products[productId].name}</h4>
                     <h6 className="name-description">{this.props.products[productId].description}</h6>
@@ -85,8 +85,8 @@ class ProductIndex extends React.Component {
 
                   <group className="product-item-links">
                       <Link to={`/users/${this.props.products[productId].hunter_id}`}>
-                        <img className="hover-submit"
-                          src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/w_100,h_100,c_thumb/${this.props.products[productId].hunter_img}.jpg`}
+                        <img className="small hover-submit small"
+                          src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/g_face,w_50,h_50,c_thumb/${this.props.products[productId].hunter_img}.jpg`}
                           alt={this.props.products[productId].hunter}/>
                       </Link>
                     <a className="hover-submit" href={this.props.products[productId].product_url}

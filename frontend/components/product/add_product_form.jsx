@@ -20,7 +20,7 @@ class AddProductForm extends React.Component {
     e.preventDefault();
     const products = this.state;
     this.props.createProduct({ products });
-    
+
     if (this.state.name !== "" && this.state.description !== "" &&
         this.state.product_url !== "") {
           this.props.closeModal();
@@ -30,10 +30,10 @@ class AddProductForm extends React.Component {
   upload(e) {
     e.preventDefault();
     let that = this;
-    cloudinary.openUploadWidget( CLOUDINARY_OPTIONS,
+    cloudinary.openUploadWidget( {cloud_name: "dbyy6mrbe",
+    upload_preset: "bq0m1hib"},
       function(error, results) {
         if (!error) {
-          debugger
           that.setState({ image_url: results[0].public_id });
         }
     });

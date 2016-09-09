@@ -19,7 +19,7 @@ class ProductDetail extends React.Component {
     return (
       <div className="product-detail">
         <img className="product-detail-img"
-          src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/c_thumb,w_200,h_200/${product.image_url}.jpg`}
+          src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/c_thumb,w_200,h_200/${product.image_url}`}
           alt={product.name} />
         <section className="product-details">
           <h2 className="details">{product.name}</h2>

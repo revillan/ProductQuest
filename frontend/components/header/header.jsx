@@ -61,7 +61,7 @@ class Header extends React.Component {
 
     render() {
 
-      let search =  <input type="text"
+      let search =  <input type="text" className="search-bar"
               placeholder="Discover your next favorite thing..."
               className="search-bar" onChange={this.autosearch()}/>
       if (this.props.currentUser) {
