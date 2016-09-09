@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { requestProfile } from '../../actions/profile_actions';
+import { createComment } from '../../actions/product_actions';
 import Profile from './profile';
 
 const mapStateToProps = (state) => ({
