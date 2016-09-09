@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link, withRouter} from 'react-router';
 
 class Comment extends React.Component {
 
@@ -8,13 +9,21 @@ class Comment extends React.Component {
      comment.author.username.concat(" - ", comment.author.title);
 
     return (
+      <div>
       <div className="comment">
-        <img className="thumb-pic" src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/c_thumb,w_50,h_50/${comment.author.image_url}.jpg`}/>
-        <div className="author-line">{author}</div>
-        {comment.body}
+        <Link to={`/users/${comment.author.id}`}>
+          <img className="thumb-pic" src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/g_face,c_thumb,w_50,h_50/${comment.author.image_url}.jpg`}/>
+          <div className="author-line group">{author}</div>
+        </Link>
+        <br/>
+        </div>
+      <div className="actual-comment">
+        <div className="space">  </div>
+        <main className="comment-text">{comment.body}</main>
+      </div>
       </div>
     );
   }
 }
 
-export default Comment;
+export default withRouter(Comment);

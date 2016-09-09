@@ -28,9 +28,10 @@ class Discussion extends React.Component {
 
     let form;
     if (this.props.currentUser) {
-      form = <form>
-        <label>Comment: <textarea id="comment-form" onChange={this.update("body")}></textarea></label>
-        <button  onClick={this.handleSubmit.bind(this)}>Comment</button>
+      form = <form className="add-comment">
+        <label className="comment-label">Comment: <textarea id="comment-form" onChange={this.update("body")}
+          className="comment-input"></textarea></label>
+        <button className='hover-submit comment-btn' onClick={this.handleSubmit.bind(this)}>Comment</button>
       </form>;
     } else {
       form = "You must be logged in to comment";
