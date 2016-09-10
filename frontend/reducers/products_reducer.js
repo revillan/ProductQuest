@@ -25,7 +25,7 @@ const ProductsReducer = function (state = _defaultProducts, action) {
       return merge({}, state, { errors });
     case ProductConstants.RECEIVE_COMMENT:
       let newState = merge({}, state);
-      debugger
+      // debugger
       let commentId = Object.keys(action.comment)[0];
       let productId = action.comment[commentId].product_id;
       newState.products[productId].comments[commentId] = action.comment[commentId];
@@ -35,7 +35,5 @@ const ProductsReducer = function (state = _defaultProducts, action) {
   }
 
 };
-
-
 
 export default ProductsReducer;

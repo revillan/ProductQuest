@@ -4,9 +4,10 @@ import { createProduct } from '../../actions/product_actions';
 import { requestSearch } from '../../actions/search_actions';
 import Header from './header';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
-  productErrors: state.products.errors
+  productErrors: state.products.errors,
+  location
 });
 
 const mapDispatchToProps = dispatch => ({

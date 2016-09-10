@@ -60,10 +60,15 @@ class Header extends React.Component {
   }
 
     render() {
-
-      let search =  <input type="text" className="search-bar"
-              placeholder="Discover your next favorite thing..."
-              className="search-bar" onChange={this.autosearch()}/>
+      // debugger
+      let search;
+      if (this.props.location.hash.slice(0,6) !== "#/user") {
+         search = <input type="text" className="search-bar"
+                placeholder="Discover your next favorite thing..."
+                className="search-bar" onChange={this.autosearch()}/>;
+      } else {
+        search = <div></div>;
+      }
       if (this.props.currentUser) {
         return (
           <hgroup className="header-group">
