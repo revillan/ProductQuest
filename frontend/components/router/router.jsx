@@ -50,7 +50,7 @@ class AppRouter extends React.Component{
           <IndexRoute component={ ProductContainer }/>
           <Route path="login" component={ SessionFormContainer } onEnter={ this._redirectIfLoggedIn }/>
           <Route path="signup" component={ SessionFormContainer } onEnter={ this._redirectIfLoggedIn }/>
-          <Route path="users/:id" component={ProfileContainer} />
+          <Route path="users/:id" components={ {main: ProfileContainer, products: ProductContainer} } />
         </Route>
       </Router>
     );

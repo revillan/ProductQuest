@@ -7,14 +7,15 @@ import { requestProfile } from '../../actions/profile_actions';
 
 import ProductIndex from './product_index';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
   products: state.products.products,
   errors: state.products.errors,
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  location
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestProducts: () => dispatch(requestProducts()),
+  requestProducts: (userId) => dispatch(requestProducts(userId)),
   requestProduct: id => dispatch(requestProduct(id)),
   createProduct: product => dispatch(createProduct(product)),
   requestProfile: (id) => dispatch(requestProfile(id)),

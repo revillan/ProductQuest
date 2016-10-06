@@ -19,8 +19,9 @@ export const receiveProduct = product => ({
   product
 });
 
-export const requestProducts = () => ({
-  type: ProductConstants.REQUEST_PRODUCTS
+export const requestProducts = (userId) => ({
+  type: ProductConstants.REQUEST_PRODUCTS,
+  userId
 });
 
 export const requestProduct = id => ({

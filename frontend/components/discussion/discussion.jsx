@@ -23,7 +23,12 @@ class Discussion extends React.Component {
     let comments = [];
 
     Object.keys(this.props.comments).forEach(comment =>(
-      comments.push( <div key={comment}><Comment comment={ this.props.comments[parseInt(comment)] } /></div>)
+      comments.push( <div key={comment}><Comment
+        closeModal={this.props.closeModal}
+        requestProfile={this.props.requestProfile}
+        requestProducts={this.props.requestProducts}
+        location={this.props.location}
+        comment={ this.props.comments[parseInt(comment)] } /></div>)
     ));
 
     let form;

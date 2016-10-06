@@ -84,7 +84,7 @@ class Header extends React.Component {
             </nav>
 
 
-            <Modal isOpen={this.state.modalIsOpen} shouldCloseOnOverlayClick={false}
+            <Modal isOpen={this.state.modalIsOpen} shouldCloseOnOverlayClick={true}
               onRequestClose={this.closeModal}>
                 <button className="float-x" onClick={this.closeModal}>X</button>
                 <AddProductForm createProduct={this.props.createProduct}

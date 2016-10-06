@@ -76,40 +76,7 @@ class Profile extends React.Component {
           </main>
         </main>
 
-        <div className="index-box">
-          {
-          Object.keys(user.products).map((productId) => (
-
-
-            <div key={productId} className="product-item"
-                onClick={this.openModal.bind(this, productId)}>
-                <img src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/c_thumb,w_100,h_100/${user.products[productId].image_url}.jpg`}></img>
-                <group className="product-item-words">
-                  <h4 className="name-description">{user.products[productId].name}</h4>
-                  <h6 className="name-description">{user.products[productId].description}</h6>
-                </group>
-
-                <group className="product-item-links">
-                  <a className="hover-submit" href={user.products[productId].product_url}
-                    target="_blank">Get Product</a>
-                </group>
-            </div>
-
-
-
-            )
-          )
-        }
-
-        <Modal isOpen={this.state.modalIsOpen}>
-          <button className="float-x" onClick={this.closeModal}>X</button>
-          <br/>
-          <ProductDetail products={user.products} id={this.state.id}
-            currentUser={this.props.currentUser} createComment={this.props.createComment}/>
-        </Modal>
-
-
-      </div>
+        
     </div>
   );
   }

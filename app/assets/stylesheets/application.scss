@@ -174,7 +174,7 @@ nav.login-signup2 a{
  }
 
 .login-direction {
-  paddng: 5px;
+  padding: 5px;
 }
 
  .error-list {
@@ -206,12 +206,17 @@ nav.login-signup2 a{
 }
 
 
-.ReactModal__Content {
+// .ReactModal__Content {
+// width: 80%;
+// }
 
-}
+// .ReactModal__Overlay--after-open {
+//   width: 80%;
+// }
 
 .ReactModal__Body--open {
   overflow: hidden;
+  // width: 80%;
 }
 
 button.float-x {
@@ -219,7 +224,7 @@ button.float-x {
     padding: 8px;
     width: 35px;
     height: 35px;
-    position: fixed;
+    position: relative;
     background: #bbb;
     border: #bbb;
     font-size: 20px;
@@ -270,14 +275,10 @@ button.add-product:hover {
 .product-detail {
     display: block;
     margin: 0 auto;
-    padding: 0 10%;
-}
-
-.product-detail {
-    display: block;
-    margin: 0 auto;
-    padding: 0 10%;
+    // padding: 0 10%;
+    background-color: #fff;
     height: 40%;
+    width: 90%;
     display: block;
 }
 
@@ -397,3 +398,4 @@ label.form-label {
 }
 
 @import 'profile';
+@import 'discussions';

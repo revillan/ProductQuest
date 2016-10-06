@@ -11,6 +11,10 @@ class ProductDetail extends React.Component {
       discuss = <Discussion comments={ product.comments }
         currentUser={this.props.currentUser}
         createComment={this.props.createComment}
+        closeModal={this.props.closeModal}
+        requestProfile={this.props.requestProfile}
+        location={this.props.location}
+        requestProducts={this.props.requestProducts}
         productId={parseInt(this.props.id)}/>;
     } else {
       discuss = <div>On a comment quest...</div>;
@@ -30,7 +34,7 @@ class ProductDetail extends React.Component {
             </section>
           </section>
 
-          <section className="Discussion">{discuss}</section>
+          <div className="Discussion">{discuss}</div>
 
       </div>
     );

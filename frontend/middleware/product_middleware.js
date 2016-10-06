@@ -14,7 +14,7 @@ export default ({ getState, dispatch }) => next => action => {
   switch(action.type){
     case ProductConstants.REQUEST_PRODUCTS:
       const successProducts = products => dispatch(receiveProducts(products));
-      fetchProducts(successProducts);
+      fetchProducts(action.userId, successProducts);
       return next(action);
     case ProductConstants.REQUEST_PRODUCT:
       const successProduct = product => dispatch(receiveProduct((product)));

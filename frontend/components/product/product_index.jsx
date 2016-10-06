@@ -1,5 +1,6 @@
-  import React from 'react';
+import React from 'react';
 import Modal from 'react-modal';
+import Infinite from 'react-infinite';
 import { Link, withRouter } from 'react-router';
 
 import ProductDetail from './product_detail';
@@ -9,24 +10,31 @@ class ProductIndex extends React.Component {
   constructor() {
     super();
      this.customStyles = {
-      content : {
-        top                   : '50%',
-        left                  : '15%',
-        right                 : 'auto',
-        bottom                : 'auto',
-        marginRight           : '-50%',
-        transform             : 'translate(-50%, -50%)'
+        overlay : {
+          position          : 'fixed',
+          top               : '0px',
+          left              : 0,
+          right             : 0,
+          bottom            : 0,
+          backgroundColor   : 'rgba(255, 255, 255, 0.75)'
+          // position : 'static'
+        },
+        content : {
+          position                   : 'absolute',
+          top                        : '0px',
+          left                       : '40px',
+          right                      : '40px',
+          bottom                     : '0px',
+          // background                 : 'transparent',
+          backgroundColor   : 'rgba(255, 255, 255, 0.0)',
+          overflow                   : 'auto',
+          WebkitOverflowScrolling    : 'touch',
+          outline                    : 'none',
+          border                     : 'none',
+          padding                    : '20px'
 
-      },
-      overlay : {
-        position          : 'fixed',
-        top               : 0,
-        left              : 0,
-        right             : 0,
-        bottom            : 0,
-        backgroundColor   : 'rgb(100,100,100,0.5)'
-      },
-    };
+        }
+      };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.state = {modalIsOpen: false, id: null };
@@ -58,7 +66,11 @@ class ProductIndex extends React.Component {
   }
 
   componentDidMount(){
-    this.props.requestProducts();
+    if (this.props.location.hash.slice(0,7) !== "#/users") {
+      this.props.requestProducts({ userId: "all" });
+    } else {
+      this.props.requestProducts({ userId: this.props.location.hash.slice(8,10).replace('?','') });
+    }
   }
 
   render() {
@@ -69,6 +81,8 @@ class ProductIndex extends React.Component {
         );
     }
 
+    // <Infinite useWindowAsScrollContainer={true} elementHeight={130}
+    //   timeScrollStateLastsForAfterUserScrolls={500}>
     return (
       <div className="product-index-container">
         <div className="index-box">
@@ -90,7 +104,7 @@ class ProductIndex extends React.Component {
                           alt={this.props.products[productId].hunter}/>
                       </Link>
                     <a className="hover-submit" href={this.props.products[productId].product_url}
-                      target="_blank">Get Product</a>
+                      target="_blank" onClick={() => window.setTimeout(this.closeModal, 0)}>Get Product</a>
                   </group>
               </div>
             )
@@ -99,11 +113,15 @@ class ProductIndex extends React.Component {
         </div>
 
 
-        <Modal isOpen={this.state.modalIsOpen}>
+        <Modal isOpen={this.state.modalIsOpen} style={this.customStyles}
+          shouldCloseOnOverlayClick={true} onRequestClose={this.closeModal}>
           <button className="float-x" onClick={this.closeModal}>X</button>
           <br/>
-          <ProductDetail products={this.props.products} id={this.state.id}
-             currentUser={this.props.currentUser} createComment={this.props.createComment}/>
+
+          <ProductDetail products={this.props.products} id={this.state.id} closeModal={this.closeModal}
+             currentUser={this.props.currentUser} createComment={this.props.createComment}
+             requestProfile={this.props.requestProfile} location={this.props.location}
+             requestProducts={this.props.requestProducts}/>
         </Modal>
 
       </div>

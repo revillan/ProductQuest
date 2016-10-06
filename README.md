@@ -1,10 +1,8 @@
-# README
-
-[ProductQuest live][heroku] **NB:** This should be a link to your production site
+# Product Quest
 
 [heroku]: http://www.productquest.xyz
 
-ProductQuest is a full-stack web application taking inspiration from Product
+[ProductQuest][heroku] is a full-stack web application taking inspiration from Product
 Hunt. It uses Ruby on Rails for the backend with a PostgreSQL database, and
 React.js on the frontend that implements a Redux framework.
 

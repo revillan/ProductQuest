@@ -1,7 +1,8 @@
-export const fetchProducts = (success) => {
+export const fetchProducts = (userId, success) => {
   $.ajax({
     method: 'GET',
     url: 'api/products',
+    data: userId,
     success,
   });
 };
