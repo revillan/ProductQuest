@@ -189,15 +189,15 @@ nav.login-signup2 a{
     margin-left: 8px;
 }
 
- button, input[type="submit"] {
-  cursor: pointer;
-  transition: filter .3s, -webkit-filter .3s;
- }
-
- button:hover, input[type="submit"]:hover {
-  filter: brightness(85%);
-  -webkit-filter: brightness(85%);
- }
+ // button, input[type="submit"] {
+ //  cursor: pointer;
+ //  transition: filter .3s, -webkit-filter .3s;
+ // }
+ //
+ // button:hover, input[type="submit"]:hover {
+ //  filter: brightness(85%);
+ //  -webkit-filter: brightness(85%);
+ // }
 
 .product-item img {
   width: 100px;
@@ -228,7 +228,7 @@ button.float-x {
     background: #bbb;
     border: #bbb;
     font-size: 20px;
-    font-family: sans-serif;
+    font-family: 'proxima-nova', 'Proxima Nova', sans-serif;
     color: #fff;
 }
 button.float-x:hover {
@@ -255,8 +255,8 @@ form.form {
     flex-direction: column;
     align-content: center;
     margin: 5%;
-    padding: 10%;
     border-radius: 5px;
+    padding:15px;
 }
 
 button.add-product {
@@ -345,8 +345,7 @@ group.product-item-words {
 
 h4.name-description {
   font-size: 24px;
-  font-weight: normal;
-  margin-bottom: 10px;
+  font-weight: 400;
 }
 
 h6.name-description{
@@ -373,28 +372,61 @@ h6.name-description{
 
 
 input[type="text"] {
+    border: none;
+    border-bottom: 2px solid black;
+    margin-left: 8px;
+    background-color: transparent;
+}
+
+input[type="text"].add-line {
  border: none;
  border-bottom: 2px solid black;
+ margin-top: 3px;
  margin-left: 8px;
+ text-align: center;
+ width: 100%;
  background-color: transparent;
+ margin-bottom: 5px;
 }
 
 input.btn {
-  margin: 15px;
+    margin: 15px;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: #C6340E;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    padding: 7px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    width: 108px;
+}
+
+input.btn:hover {
+  border: 1px solid black;
+}
+
+.upload-image {
+  // margin: 15px;
   box-sizing: border-box;
   color: #fff;
   background-color: #C6340E;
   border-radius: 4px;
-  border: none;
-  padding: 7px;
+  border: 1px solid transparent;
+  padding: 2px 20px;
 }
 
-input.btn:hover {
-  border: 1px solid #5e5e5e;
+.upload-image:hover {
+  border: 1px solid black;
 }
 
 label.form-label {
-    padding: 5px;
+    display: flex;
+    flex-direction: inherit;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 @import 'profile';

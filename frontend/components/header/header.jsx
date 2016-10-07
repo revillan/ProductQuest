@@ -8,28 +8,36 @@ class Header extends React.Component {
   constructor() {
     super();
      this.customStyles = {
-      content : {
-        top                   : '30%',
-        left                  : '30%',
-        right                 : 'auto',
-        bottom                : 'auto',
-        marginRight           : '-50%',
-        transform             : 'translate(-50%, -50%)'
+       overlay : {
+         position          : 'fixed',
+         top               : '0px',
+         left              : 0,
+         right             : 0,
+         bottom            : 0,
+         backgroundColor   : 'rgba(255, 255, 255, 0.75)'
+         // position : 'static'
+       },
+       content : {
+         position                   : 'absolute',
+         top                        : '0px',
+         left                       : '40px',
+         right                      : '40px',
+         bottom                     : '0px',
+         // background                 : 'transparent',
+         backgroundColor   : 'rgba(255, 255, 255, 0.0)',
+         overflow                   : 'auto',
+         WebkitOverflowScrolling    : 'touch',
+         outline                    : 'none',
+         border                     : 'none',
+         padding                    : '20px'
 
-      },
-      overlay : {
-        position          : 'fixed',
-        top               : '0px',
-        left              : '0px',
-        right             : '0px',
-        bottom            : '0px',
-        backgroundColor   : 'black'
-      },
+       }
+
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.login = false;
-    this.state = {query: ""}
+    this.state = {query: ""};
   }
 
   componentWillMount() {
@@ -85,10 +93,11 @@ class Header extends React.Component {
 
 
             <Modal isOpen={this.state.modalIsOpen} shouldCloseOnOverlayClick={true}
-              onRequestClose={this.closeModal}>
+              onRequestClose={this.closeModal} style={this.customStyles}>
                 <button className="float-x" onClick={this.closeModal}>X</button>
                 <AddProductForm createProduct={this.props.createProduct}
-                  errors={this.props.productErrors} closeModal={this.closeModal}/>
+                  errors={this.props.productErrors} closeModal={this.closeModal}
+                  location={this.props.location}/>
             </Modal>
           </hgroup>
         );
