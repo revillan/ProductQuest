@@ -43,7 +43,11 @@ class ProductIndex extends React.Component {
   componentWillMount() {
     Modal.setAppElement('body');
     this.setState({modalIsOpen: false});
-    this.props.requestSearch({query: null });
+    if (this.props.location.hash.slice(0,7) !== "#/users") {
+      this.props.requestSearch({query: null });
+    } else {
+      this.props.requestProducts({ userId: this.props.location.hash.slice(8,10).replace('?','') });
+    }
   }
 
 
