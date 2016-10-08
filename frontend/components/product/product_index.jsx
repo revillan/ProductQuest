@@ -85,7 +85,6 @@ class ProductIndex extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState){
-    console.log("asks?");
     if (nextState.loading === false && this.state.count < 2) {
       this.setState({count: 3});
       return false;
@@ -96,7 +95,6 @@ class ProductIndex extends React.Component {
 
   render() {
     if (Object.keys(this.props.products).length === 0 && this.state.loading === true) {
-      console.log(this.state.loading);
       return ( <div className="loading">
           <text className="loading-text">On a product quest...</text>
         </div>
