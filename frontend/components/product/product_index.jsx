@@ -37,12 +37,13 @@ class ProductIndex extends React.Component {
       };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.state = {modalIsOpen: false, id: null };
+    this.state = {modalIsOpen: false, id: null, loading: true, count: 0 };
   }
 
   componentWillMount() {
     Modal.setAppElement('body');
     this.setState({modalIsOpen: false});
+    this.props.requestSearch({query: null });
   }
 
 
@@ -66,6 +67,7 @@ class ProductIndex extends React.Component {
   }
 
   componentDidMount(){
+    this.setState({loading: false});
     if (this.props.location.hash.slice(0,7) !== "#/users") {
       this.props.requestProducts({ userId: "all" });
     } else {
@@ -73,13 +75,34 @@ class ProductIndex extends React.Component {
     }
   }
 
+  componentDidMount() {
+      this.setState({loading: false});
+      this.setState({count: 3});
+  }
+
+  shouldComponentUpdate(nextProps, nextState){
+    console.log("asks?");
+    if (nextState.loading === false && this.state.count < 2) {
+      this.setState({count: 3});
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   render() {
-    if (Object.keys(this.props.products).length === 0) {
+    if (Object.keys(this.props.products).length === 0 && this.state.loading === true) {
+      console.log(this.state.loading);
       return ( <div className="loading">
           <text className="loading-text">On a product quest...</text>
         </div>
         );
+    } else if (Object.keys(this.props.products).length === 0) {
+      return (<div className="loading">
+          <text className="loading-text">No matching results...</text>
+        </div>);
     }
+
 
     // <Infinite useWindowAsScrollContainer={true} elementHeight={130}
     //   timeScrollStateLastsForAfterUserScrolls={500}>

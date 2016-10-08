@@ -37,8 +37,8 @@ class Header extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.login = false;
-    this.state = {query: ""};
   }
+
 
   componentWillMount() {
     Modal.setAppElement('body');
@@ -63,17 +63,20 @@ class Header extends React.Component {
     this.setState({modalIsOpen: false});
   }
 
-  autosearch() {
-    return e => ( this.props.requestSearch({query: e.currentTarget.value }) );
+  autosearch(event) {
+    let value = event.currentTarget.value;
+    if (value === "") {
+      value = null;
+    }
+    return ( this.props.requestSearch({query: value }) );
   }
 
     render() {
-      // debugger
       let search;
       if (this.props.location.hash.slice(0,6) !== "#/user") {
          search = <input type="text" className="search-bar"
                 placeholder="Discover your next favorite thing..."
-                className="search-bar" onChange={this.autosearch()}/>;
+                className="search-bar" onChange={(e) => this.autosearch(e)}/>;
       } else {
         search = <div></div>;
       }
