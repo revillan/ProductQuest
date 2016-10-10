@@ -1,5 +1,6 @@
 import React from 'react';
 import Comment from './comment';
+import { Link, withRouter } from 'react-router';
 
 class Discussion extends React.Component {
   constructor(props) {
@@ -39,7 +40,7 @@ class Discussion extends React.Component {
         <button className='hover-submit comment-btn' onClick={this.handleSubmit.bind(this)}>Comment</button>
       </form>;
     } else {
-      form = "You must be logged in to comment";
+      form = <div className="comment-login">You must be <Link to={'/login'}> logged in </Link> to comment</div>;
     }
 
     // debugger
@@ -54,4 +55,4 @@ class Discussion extends React.Component {
   }
 }
 
-export default Discussion;
+export default withRouter(Discussion);

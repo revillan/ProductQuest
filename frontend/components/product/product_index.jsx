@@ -101,7 +101,7 @@ class ProductIndex extends React.Component {
         );
     } else if (Object.keys(this.props.products).length === 0) {
       return (<div className="loading">
-          <text className="loading-text">No matching results...</text>
+          <text className="loading-text">No products found...</text>
         </div>);
     }
 
@@ -123,11 +123,7 @@ class ProductIndex extends React.Component {
                   </group>
 
                   <group className="product-item-links">
-                      <Link to={`/users/${this.props.products[productId].hunter_id}`}>
-                        <img className="small hover-submit small"
-                          src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/g_face,w_50,h_50,c_thumb/${this.props.products[productId].hunter_img}.jpg`}
-                          alt={this.props.products[productId].hunter}/>
-                      </Link>
+
                     <a className="hover-submit" href={this.props.products[productId].product_url}
                       target="_blank" onClick={() => window.setTimeout(this.closeModal, 0)}>Get Product</a>
                   </group>
@@ -156,3 +152,10 @@ class ProductIndex extends React.Component {
 }
 
   export default withRouter(ProductIndex);
+
+
+  // <Link to={`/users/${this.props.products[productId].hunter_id}`}>
+  //   <img className="small hover-submit small"
+  //     src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/g_face,w_50,h_50,c_thumb/${this.props.products[productId].hunter_img}.jpg`}
+  //     alt={this.props.products[productId].hunter}/>
+  // </Link>

@@ -8,3 +8,19 @@
   padding: 0 15px;
   margin-bottom: 40px;
 }
+
+.comment-login {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.comment-login > a {
+  font-weight: 600;
+  color: #5e5e5e;
+  margin: 0 3px;
+}
+
+.comment-login > a:hover {
+  color: #C6340E;
+}

@@ -1,5 +1,7 @@
 import React from 'react';
 import Discussion from '../discussion/discussion';
+import { Link, withRouter } from 'react-router';
+
 
 class ProductDetail extends React.Component {
 
@@ -31,6 +33,15 @@ class ProductDetail extends React.Component {
             <section className="product-buttons">
 
               <a className="submit" href={product.product_url} target="_blank">Get Product</a>
+
+
+              <div className="submitter"> Submitted by
+                <Link to={`/users/${product.hunter_id}`} onClick={this.props.closeModal}>
+                  <img className="small hover-submit small"
+                    src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/g_face,w_50,h_50,c_thumb/${product.hunter_img}.jpg`}
+                    alt={product.hunter}/>
+                </Link>
+                </div>
             </section>
           </section>
 
@@ -43,4 +54,4 @@ class ProductDetail extends React.Component {
 
               // {product.hunter_id}
 
-export default ProductDetail;
+export default withRouter(ProductDetail);
