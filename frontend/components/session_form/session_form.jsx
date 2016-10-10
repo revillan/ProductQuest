@@ -38,10 +38,10 @@ class SessionForm extends React.Component {
 
   demoAccount(e){
     this.setState({
-      username: "jsmith",
+      username: "laurmith",
       password: "lsPrfv"
     });
-    const user = { username: "jsmith", password: "lsPrfv" };
+    const user = { username: "laurmith", password: "lsPrfv" };
     this.props.demo({ user });
   }
 
