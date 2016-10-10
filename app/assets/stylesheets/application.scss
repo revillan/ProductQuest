@@ -62,7 +62,9 @@ body {
   align-self: center;
   padding-right: 15px;
   color: #fff;
-  font-size: 18px
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
 }
 
 .login-signup a {
@@ -428,6 +430,14 @@ label.form-label {
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
+}
+
+.log-sign-space-L {
+    margin-right: 12px;
+}
+
+.log-sign-space-R {
+  margin-left: 12px;
 }
 
 @import 'profile';

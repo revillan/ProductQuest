@@ -99,7 +99,9 @@ class Header extends React.Component {
               onRequestClose={this.closeModal} style={this.customStyles}>
                 <button className="float-x" onClick={this.closeModal}>X</button>
                 <AddProductForm createProduct={this.props.createProduct}
-                  errors={this.props.productErrors} closeModal={this.closeModal}
+                  errors={this.props.productErrors}
+                  requestSearch={this.props.requestSearch}
+                  closeModal={this.closeModal}
                   location={this.props.location}/>
             </Modal>
           </hgroup>
@@ -114,9 +116,9 @@ class Header extends React.Component {
             {search}
 
             <nav className="login-signup2">
-              <Link to="/login">Login</Link>
-                &nbsp;or&nbsp;
-              <Link to="/signup">Sign up!</Link>
+              <div className="log-sign-space-L"><Link to="/login">Login</Link></div>
+
+              <div className="log-sign-space-R"><Link to="/signup">Sign up</Link></div>
               </nav>
             </nav>
           </hgroup>
