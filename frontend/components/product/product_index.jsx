@@ -85,7 +85,7 @@ class ProductIndex extends React.Component {
   }
 
   shouldComponentUpdate(nextProps, nextState){
-    if (nextState.loading === false && this.state.count < 2) {
+    if (this.state.loading === true && nextState.loading === false && this.state.count < 2) {
       this.setState({count: 3});
       return false;
     } else {

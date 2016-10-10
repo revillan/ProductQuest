@@ -27,10 +27,7 @@ class AddProductForm extends React.Component {
           this.props.closeModal();
           if (this.props.location.hash.slice(0,7) === "#/users") {
             this.props.location.replace("/");
-          } else {
-            this.props.requestSearch({query: "e"});
-            this.props.requestSearch({query: null});
-          }
+          } 
 
         }
 

@@ -100,6 +100,7 @@ class Header extends React.Component {
                 <button className="float-x" onClick={this.closeModal}>X</button>
                 <AddProductForm createProduct={this.props.createProduct}
                   errors={this.props.productErrors}
+                  requestProducts={this.props.requestProducts}
                   requestSearch={this.props.requestSearch}
                   closeModal={this.closeModal}
                   location={this.props.location}/>

@@ -27,7 +27,7 @@ class Api::ProductsController < ApplicationController
           { query: "%#{params[:query].downcase}%" }
         ]
       )
-    elsif params[:userId].to_s != "all"
+    elsif params[:userId].to_s != "all" && !params[:userId].nil?
       @products = @products.select { |prod| prod.user.id.to_s ==  params[:userId]   }
     end
     @products
