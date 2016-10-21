@@ -6,6 +6,8 @@
 Hunt. It uses Ruby on Rails for the backend with a PostgreSQL database, and
 React.js on the frontend that implements a Redux framework.
 
+![homescreen](./app/assets/images/homepage_scrnsht.png)
+
 ## Features & Implementation
 
 ### Single-Page application
