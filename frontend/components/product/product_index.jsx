@@ -22,8 +22,8 @@ class ProductIndex extends React.Component {
         content : {
           position                   : 'absolute',
           top                        : '0px',
-          left                       : '40px',
-          right                      : '40px',
+          left                       : '0px',
+          right                      : '0px',
           bottom                     : '0px',
           // background                 : 'transparent',
           backgroundColor   : 'rgba(255, 255, 255, 0.0)',
