@@ -33,6 +33,23 @@ item in product index. The `product_detail` component renders inside a modal
 displayed on top of the content currently on the page. It shows all product
 information along with the discussion section associated with the product.
 
+### User Profile Pages
+
+![profile-page](./app/assets/images/profile_page.png)
+
+The profile page used the react-router to display two container components on the page. In the Router, under the `users/:id` route, instead of passing a single component, an object containing two components is passed in as a prop under components.
+
+```javascript
+<Router history={ hashHistory }>
+  <Route path="/" component={ App }>
+    <IndexRoute component={ ProductContainer }/>
+    <Route path="login" component={ SessionFormContainer } onEnter={ this._redirectIfLoggedIn }/>
+    <Route path="signup" component={ SessionFormContainer } onEnter={ this._redirectIfLoggedIn }/>
+    <Route path="users/:id" components={ {main: ProfileContainer, products: ProductContainer} } />
+  </Route>
+</Router>
+```
+
 ### Discussion
 
 Each comment is stored in a discussions table with columns for `author_id`,
