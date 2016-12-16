@@ -85,7 +85,7 @@ class AddProductForm extends React.Component {
               <label className="form-label"> <button className="form-label upload-image" onClick={this.upload}>Upload Image</button> </label>
             </div>
           </div>
-          <input type="button" className="form-itself btn" value="Submit" onClick={this.handleSubmit.bind(this)}  />
+          <input type="button" className="form-itself btn" value="Submit" onClick={this.handleSubmit}  />
         </form>
       </div>
     );
