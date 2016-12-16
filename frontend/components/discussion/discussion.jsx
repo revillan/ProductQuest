@@ -6,6 +6,8 @@ class Discussion extends React.Component {
   constructor(props) {
     super(props);
     this.state = {body: "", product_id: this.props.productId };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field){
@@ -42,8 +44,6 @@ class Discussion extends React.Component {
     } else {
       form = <div className="comment-login">You must be <Link to={'/login'}> logged in </Link> to comment</div>;
     }
-
-    // debugger
 
     return (
       <div>

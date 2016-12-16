@@ -7,8 +7,8 @@ import ProductDetail from './product_detail';
 
 class ProductIndex extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
      this.customStyles = {
         overlay : {
           position          : 'fixed',
@@ -52,13 +52,11 @@ class ProductIndex extends React.Component {
 
 
   openModal(id) {
-    // debugger
     this.props.requestProduct(id);
     this.setState({modalIsOpen: true, id: id});
   }
 
   afterOpenModal() {
-    // references are now sync'd and can be accessed.
     this.refs.subtitle.style.color = '#f00';
   }
 
@@ -152,10 +150,3 @@ class ProductIndex extends React.Component {
 }
 
   export default withRouter(ProductIndex);
-
-
-  // <Link to={`/users/${this.props.products[productId].hunter_id}`}>
-  //   <img className="small hover-submit small"
-  //     src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/g_face,w_50,h_50,c_thumb/${this.props.products[productId].hunter_img}.jpg`}
-  //     alt={this.props.products[productId].hunter}/>
-  // </Link>

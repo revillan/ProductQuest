@@ -3,14 +3,17 @@ import { Link, withRouter } from 'react-router';
 
 class AddProductForm extends React.Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       name: "",
       description: "",
       product_url: "",
       image_url: "vcbkjwsgq5xztftzqbrz"
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.update = this.update.bind(this);
   }
 
   update(field){
@@ -35,14 +38,14 @@ class AddProductForm extends React.Component {
 
   upload(e) {
     e.preventDefault();
-    let that = this;
+    // let that = this;
     cloudinary.openUploadWidget( {cloud_name: "dbyy6mrbe",
     upload_preset: "bq0m1hib",
-    stylesheet: "#cloudinary-overlay { background-color: rgba(255,255,255,0.75);} .widget .header { border-color: #C6340E} .widget .header .sources .source.active {    background-color: #C6340E; } .widget .button { background: #C6340E; border-radius: 0px;} .widget .button:hover, .widget .upload_button_holder:hover .button { background-color: #C6340E; color: #C6340E; background: #fff; border-radius: 0px; } .widget .panel.local .drag_area .drag_content .label {color: #C6340E;} .widget .panel.local .upload_button_holder, .capture_camera, .upload_url {border: 1px solid black;} .widget .panel.local .drag_area {background-color: #eee; border: 2px dashed #5e5e5e;} .widget .header .close, .widget .panel.local .drag_area .drag_content .or { color: #5e5e5e;} .widget {border: 1px solid #5e5e5e; box-shadow: none; border-radius: 2px; width: 50%;} div#cloudinary-widget {width: 50%;}"
+    stylesheet: "#cloudinary-overlay { background-color: rgba(255,255,255,0.75);} .widget .header { border-color: #C6340E} .widget .header .sources .source.active {    background-color: #C6340E; } .widget .button { background: #C6340E; border-radius: 0px;} .widget .button:hover, .widget .upload_button_holder:hover .button { background-color: #C6340E; color: #C6340E; background: #fff; border-radius: 0px; } .widget .panel.local .drag_area .drag_content .label {color: #C6340E;} .widget .panel.local .upload_button_holder, .capture_camera, .upload_url {border: 1px solid black;} .widget .panel.local .drag_area {background-color: #eee; border: 2px dashed #5e5e5e;} .widget .header .close, .widget .panel.local .drag_area .drag_content .or { color: #5e5e5e;} .widget {border: 1px solid #5e5e5e; box-shadow: none; border-radius: 2px; width: 50%;} div#cloudinary-widget {width: 50%;} #cloudinary-overlay.modal {background-color: rgpa(0,0,0,.5)}"
     },
       function(error, results) {
         if (!error) {
-          that.setState({ image_url: results[0].public_id });
+          this.setState({ image_url: results[0].public_id });
         }
     });
   }
@@ -79,7 +82,7 @@ class AddProductForm extends React.Component {
             </div>
             <div className="form-block">
               <div className="thumb"> <label className="thumb-preview">Preview:</label> <img src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/w_100,h_100/${this.state.image_url}`}></img></div>
-              <label className="form-label"> <button className="form-label upload-image" onClick={this.upload.bind(this)}>Upload Image</button> </label>
+              <label className="form-label"> <button className="form-label upload-image" onClick={this.upload}>Upload Image</button> </label>
             </div>
           </div>
           <input type="button" className="form-itself btn" value="Submit" onClick={this.handleSubmit.bind(this)}  />

@@ -34,9 +34,10 @@ class Header extends React.Component {
        }
 
     };
+    this.login = false;
+    
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.login = false;
   }
 
 

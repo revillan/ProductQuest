@@ -6,6 +6,7 @@ class Comment extends React.Component {
     super(props);
     this.state = {comment: this.props.comment};
 
+    this.handleClick = this.handleClick.bind(this);
   }
 
 
@@ -27,7 +28,7 @@ class Comment extends React.Component {
     return (
       <div>
       <div className="comment">
-        <Link to={`/users/${comment.author.id}`} onClick={this.handleClick.bind(this)} >
+        <Link to={`/users/${comment.author.id}`} onClick={this.handleClick} >
           <img className="thumb-pic" src={`http://res.cloudinary.com/dbyy6mrbe/image/upload/g_face,c_thumb,w_50,h_50/${comment.author.image_url}.jpg`}/>
           <div className="author-line group">{author}</div>
         </Link>

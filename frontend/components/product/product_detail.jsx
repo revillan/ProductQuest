@@ -52,6 +52,4 @@ class ProductDetail extends React.Component {
   }
 }
 
-              // {product.hunter_id}
-
 export default withRouter(ProductDetail);

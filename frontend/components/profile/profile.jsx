@@ -26,9 +26,11 @@ class Profile extends React.Component {
         backgroundColor   : 'black'
       },
     };
+
+    this.state = {modalIsOpen: false, id: null };
+
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.state = {modalIsOpen: false, id: null };
   }
 
   componentDidMount() {
@@ -76,7 +78,7 @@ class Profile extends React.Component {
           </main>
         </main>
 
-        
+
     </div>
   );
   }
