@@ -18,7 +18,7 @@ const ProfileReducer = function (state = _defaultProfiles, action) {
     //       products[id]["comments"] = {};
     //     }
     //   });
-    return merge( {}, _defaultProfiles, { profile });
+    return merge( {},  profile );
 
     default:
       return state;

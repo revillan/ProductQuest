@@ -58,7 +58,7 @@ class Profile extends React.Component {
     }
 
   render() {
-    let user = this.props.profile.profile;
+    let user = this.props.profile;
 
     if (Object.keys(user).length === 0 ) {
       return <div></div>
